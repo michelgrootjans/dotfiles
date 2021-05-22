@@ -23,12 +23,12 @@ if [ ! -d $HOME/.dotfiles ]; then
 fi
 
 # Install all our dependencies with bundle (See Brewfile)
-# brew update
-# brew tap homebrew/bundle
-# brew bundle --file ~/.dotfiles/Brewfile
-# brew cleanup
+brew update
+brew tap homebrew/bundle
+brew bundle --file ~/.dotfiles/Brewfile
+brew cleanup
 
-for file in .{zprofile,gitignore}; do
+for file in .{zprofile,gitconfig,gitignore}; do
   rm -rf $HOME/$file
   ln -s $HOME/.dotfiles/$file $HOME/$file
 done;
