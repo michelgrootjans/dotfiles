@@ -1,8 +1,8 @@
 # Steps to setup a new machine:
 
 ## Start a brand new installation:
-This will install zsh, homebrew and git and download this repo under `~/.dotfiles`, then run `~/.dotfiles/install.sh`
-- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/michelgrootjans/dotfiles/HEAD/init.sh)"`
+This will run the installation on a brand new machine
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/michelgrootjans/dotfiles/HEAD/install.sh)"`
 
 ## Refresh an existing installation:
 - `~/.dotfiles/install.sh`
