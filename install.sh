@@ -12,19 +12,21 @@ if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Install git, clone ~/.dotfiles and run install.sh
+# Install git
 if ! command -v git &> /dev/null; then
   brew install git
 fi
 
+# Clone to ~/.dotfiles
 if [ ! -d ~/.dotfiles ]; then
   git clone git@github.com:michelgrootjans/dotfiles.git ~/.dotfiles
 fi
 
-# Update Homebrew recipes
-brew update
-
 # Install all our dependencies with bundle (See Brewfile)
+brew update
 brew tap homebrew/bundle
 brew bundle --file ~/.dotfiles/Brewfile
+brew cleanup
 
+rm -rf $HOME/.zprofile
+ln -s $HOME/.dotfiles/.zprofile $HOME/.zprofile
