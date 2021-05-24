@@ -28,7 +28,7 @@ brew tap homebrew/bundle
 brew bundle --file ~/.dotfiles/Brewfile
 brew cleanup
 
-for file in .{zprofile,gitconfig,gitignore}; do
+for file in .{zprofile,gitconfig,gitignore,nvm-init}; do
   rm -rf $HOME/$file
   ln -s $HOME/.dotfiles/$file $HOME/$file
 done;
