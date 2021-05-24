@@ -29,7 +29,8 @@ brew bundle --file ~/.dotfiles/Brewfile
 brew cleanup
 
 for file in .{zprofile,gitconfig,gitignore,nvm-init}; do
-  rm -rf $HOME/$file
+  # if file is symlink, delete it, else rename it to *.bak
+  [ -L $HOME/$file ] && rm -rf $HOME/$file || mv $HOME/$file "$HOME/$file.bak"
   ln -s $HOME/.dotfiles/$file $HOME/$file
 done;
 unset file;
