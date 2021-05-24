@@ -33,3 +33,7 @@ for file in .{zprofile,gitconfig,gitignore}; do
   ln -s $HOME/.dotfiles/$file $HOME/$file
 done;
 unset file;
+
+
+# Set macOS preferences - we will run this last because this will reload the shell
+source .macos
