@@ -33,7 +33,12 @@ brew tap homebrew/bundle
 brew bundle --file ~/.dotfiles/Brewfile
 brew cleanup
 
-for file in .{zprofile,gitconfig,gitignore,nvm-init}; do
+# Install sdkman
+if ! command -v sdk &> /dev/null; then
+  curl -s "https://get.sdkman.io" | bash
+fi
+
+for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init}; do
   # if file is symlink, delete it, else rename it to *.bak
   [ -L $HOME/$file ] && rm -rf $HOME/$file || mv $HOME/$file "$HOME/$file.bak"
   ln -s $HOME/.dotfiles/$file $HOME/$file
