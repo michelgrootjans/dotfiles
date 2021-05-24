@@ -9,3 +9,6 @@ This will run the installation on a brand new machine
 
 
 Heavily inspired by https://dotfiles.github.io/ and https://github.com/driesvints/dotfiles
+
+
+TODO: SDKMAN

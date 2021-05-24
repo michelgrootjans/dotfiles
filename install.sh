@@ -2,11 +2,6 @@
 
 echo "Setting up your Mac..."
 
-# Check for Oh My Zsh and install if we don't have it
-if [ ! -d $HOME/.oh-my-zsh ]; then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
-fi
-
 # Check for Homebrew and install if we don't have it
 if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -20,6 +15,16 @@ fi
 # Clone to ~/.dotfiles
 if [ ! -d $HOME/.dotfiles ]; then
   git clone git@github.com:michelgrootjans/dotfiles.git $HOME/.dotfiles
+fi
+
+# Check for Oh My Zsh and install if we don't have it
+if [ ! -d $HOME/.oh-my-zsh ]; then
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+fi
+
+# Check for powerlevel10k and install if we don't have it
+if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 fi
 
 # Install all our dependencies with bundle (See Brewfile)

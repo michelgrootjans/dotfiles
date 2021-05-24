@@ -5,10 +5,11 @@ tap 'homebrew/bundle'
 tap 'remotemobprogramming/brew'
 
 #Binaries
+# brew 'zsh'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
-# brew 'git' is required to get this file in the first place. See readme.md
+brew 'git'
 brew 'grep'
 brew 'httpie'
 brew 'mackup'
@@ -38,16 +39,18 @@ brew 'pyenv-virtualenv'
 cask 'iterm2'
 cask 'visual-studio-code'
 cask 'dropbox'
-#cask 'alfred'
-#cask 'caffeine'
-#cask 'discord'
+# cask 'alfred'
+# cask 'caffeine'
+# cask 'discord'
 cask 'docker'
 cask 'docker-toolbox'
-#cask 'firefox'
-#cask 'google-chrome'
-#cask 'slack'
+# cask 'firefox'
+# cask 'google-chrome'
+# cask 'slack'
 cask 'the-unarchiver'
-#cask 'zoom'
+# cask 'zoom'
+# cask 'jetbrains-toolbox'
+
 
 # Quicklook
 cask 'qlmarkdown'
