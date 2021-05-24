@@ -25,6 +25,8 @@ fi
 # Check for powerlevel10k and install if we don't have it
 if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+else
+  git -C $HOME/.oh-my-zsh/custom/themes/powerlevel10k pull
 fi
 
 # Install all our dependencies with bundle (See Brewfile)
@@ -38,7 +40,7 @@ if ! command -v sdk &> /dev/null; then
   curl -s "https://get.sdkman.io" | bash
 fi
 
-for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init}; do
+for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
   # if file is symlink, delete it, else rename it to *.bak
   [ -L $HOME/$file ] && rm -rf $HOME/$file || mv $HOME/$file "$HOME/$file.bak"
   ln -s $HOME/.dotfiles/$file $HOME/$file
