@@ -19,6 +19,8 @@ alias top=bpytop
 alias diff=icdiff
 
 mkcd() { mkdir -p "$@" && cd "$@"; }
+gitall() { find . -type d -depth 1 -print -exec git -C {} "$@"  \; }
+
 autoload -U compinit
 compinit
 
