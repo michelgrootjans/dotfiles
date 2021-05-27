@@ -33,6 +33,7 @@ brew 'sqlite'
 brew 'nvm'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'structurizr-cli'
 
 
 # Apps
