@@ -27,3 +27,5 @@ compinit
 if [ -f ~/.zprofile_local ]; then
     source ~/.zprofile_local
 fi
+
+mob-start() { git checkout -b "$@" && git push origin "$@" -u && mob start; }
