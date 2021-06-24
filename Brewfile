@@ -50,6 +50,7 @@ cask 'docker-toolbox'
 cask 'the-unarchiver'
 # cask 'zoom'
 # cask 'jetbrains-toolbox'
+cask 'gifox'
 
 
 # Quicklook
