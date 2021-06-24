@@ -51,6 +51,7 @@ cask 'the-unarchiver'
 # cask 'zoom'
 # cask 'jetbrains-toolbox'
 cask 'gifox'
+cask 'krisp'
 
 
 # Quicklook
