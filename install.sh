@@ -11,15 +11,13 @@ if ! command -v brew &> /dev/null; then
   UNAME_MACHINE="$(/usr/bin/uname -m)"
 
   if [[ "$UNAME_MACHINE" == "arm64" ]]; then
-    # On ARM macOS, this script installs to /opt/homebrew only
-    HOMEBREW_PREFIX="/opt/homebrew"
-    echo 'eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> $HOME/.zprofile_local
+    # On ARM macOS, homebrew installs to /opt/homebrew only
+    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile_local
+    eval $(/opt/homebrew/bin/brew shellenv)
   else
-    # On Intel macOS, this script installs to /usr/local only
-    HOMEBREW_PREFIX="/usr/local"
+    # On Intel macOS, homebrew installs to /usr/local only
+    eval $(/usr/local/bin/brew shellenv)
   fi
-
-  eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 fi
 
 # Install git
