@@ -14,7 +14,7 @@ fi
 
 # Clone to ~/.dotfiles
 if [ ! -d $HOME/.dotfiles ]; then
-  git clone git@github.com:michelgrootjans/dotfiles.git $HOME/.dotfiles
+  git clone https://github.com/michelgrootjans/dotfiles.git $HOME/.dotfiles
 fi
 
 # Check for Oh My Zsh and install if we don't have it
