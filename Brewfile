@@ -10,7 +10,6 @@ brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
-brew 'svn'
 brew 'grep'
 brew 'httpie'
 brew 'mackup'
@@ -62,6 +61,7 @@ cask 'quicklook-json'
 
 
 # Fonts
+brew 'svn' # necessary for the fonts
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
