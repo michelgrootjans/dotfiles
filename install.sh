@@ -19,6 +19,13 @@ if [ ! -d $HOME/.dotfiles ]; then
   git clone https://github.com/michelgrootjans/dotfiles.git $HOME/.dotfiles
 fi
 
+
+# Install all our dependencies with bundle (See Brewfile)
+brew update
+brew tap homebrew/bundle
+brew bundle --file ~/.dotfiles/Brewfile
+brew cleanup
+
 # Check for Oh My Zsh and install if we don't have it
 if [ ! -d $HOME/.oh-my-zsh ]; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
@@ -30,12 +37,6 @@ if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
 else
   git -C $HOME/.oh-my-zsh/custom/themes/powerlevel10k pull
 fi
-
-# Install all our dependencies with bundle (See Brewfile)
-brew update
-brew tap homebrew/bundle
-brew bundle --file ~/.dotfiles/Brewfile
-brew cleanup
 
 # Install sdkman
 if ! command -v sdk &> /dev/null; then
