@@ -58,8 +58,8 @@ fi
 
 for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
   # if file is symlink, delete it, else rename it to *.bak
-  [ -L $HOME/$file ] && rm -rf $HOME/$file || mv $HOME/$file "$HOME/$file.bak"
-  ln -s $HOME/.dotfiles/$file $HOME/$file
+  [ -f $HOME/$file ] && mv $HOME/$file "$HOME/$file.bak"
+  ln -sf $HOME/.dotfiles/$file $HOME/$file
 done;
 unset file;
 
