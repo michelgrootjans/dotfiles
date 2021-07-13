@@ -42,6 +42,15 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
+# Check for zsh-autosuggestions and install if we don't have it
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+  echo 'bestaat nog niet'
+  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+else
+  echo 'bestaat al'
+  git -C $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions pull
+fi
+
 # Check for powerlevel10k and install if we don't have it
 if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
