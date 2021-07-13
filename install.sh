@@ -7,6 +7,18 @@ echo "Setting up your Mac..."
 # Check for Homebrew and install if we don't have it
 if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  UNAME_MACHINE="$(/usr/bin/uname -m)"
+
+  if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+    # On ARM macOS, this script installs to /opt/homebrew only
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    # On Intel macOS, this script installs to /usr/local only
+    HOMEBREW_PREFIX="/usr/local"
+  fi
+
+  eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 fi
 
 # Install git
