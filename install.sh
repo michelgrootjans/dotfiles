@@ -64,8 +64,8 @@ done;
 unset file;
 
 # Install krisp
-sudo softwareupdate --install-rosetta
-brew install --cask krisp
+# sudo softwareupdate --install-rosetta
+# brew install --cask krisp
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source .macos
