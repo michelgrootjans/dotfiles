@@ -52,7 +52,7 @@ cask 'zoom'
 cask 'jetbrains-toolbox'
 cask 'gifox'
 cask 'krisp'
-cask rectangle
+cask 'rectangle'
 
 
 # Quicklook
