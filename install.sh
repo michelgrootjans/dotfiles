@@ -13,6 +13,7 @@ if ! command -v brew &> /dev/null; then
   if [[ "$UNAME_MACHINE" == "arm64" ]]; then
     # On ARM macOS, this script installs to /opt/homebrew only
     HOMEBREW_PREFIX="/opt/homebrew"
+    echo 'eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> $HOME/.zprofile_local
   else
     # On Intel macOS, this script installs to /usr/local only
     HOMEBREW_PREFIX="/usr/local"
