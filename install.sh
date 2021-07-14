@@ -26,8 +26,9 @@ if ! command -v git &> /dev/null; then
 fi
 
 # Clone to ~/.dotfiles
-if [ ! -d $HOME/.dotfiles ]; then
-  git clone https://github.com/michelgrootjans/dotfiles.git $HOME/.dotfiles
+DOTFILES=$HOME/.dotfiles
+if [ ! -d $DOTFILES ]; then
+  git clone https://github.com/michelgrootjans/dotfiles.git $DOTFILES
 fi
 
 
@@ -44,10 +45,8 @@ fi
 
 # Check for zsh-autosuggestions and install if we don't have it
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-  echo 'bestaat nog niet'
   git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 else
-  echo 'bestaat al'
   git -C $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions pull
 fi
 
@@ -66,11 +65,11 @@ fi
 for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
   # if file is symlink, delete it, else rename it to *.bak
   [ -f $HOME/$file ] && mv $HOME/$file "$HOME/$file.bak"
-  ln -sf $HOME/.dotfiles/$file $HOME/$file
+  ln -sf $DOTFILES/$file $HOME/$file
 done;
 unset file;
 
-source $HOME/.dotfiles/install/.customize
+source $DOTFILES/install/.customize
 
 # Install krisp
 # sudo softwareupdate --install-rosetta
