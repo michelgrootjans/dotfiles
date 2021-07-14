@@ -31,7 +31,6 @@ brew 'remotemobprogramming/brew/mob'
 
 # Development
 brew 'sqlite'
-brew 'nvm'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 

@@ -13,6 +13,12 @@ if ! command -v sdk &> /dev/null; then
   curl -s "https://get.sdkman.io" | bash
 fi
 
+# setup nvm
+if [[ ! -d $HOME/.nvm ]]; then
+  git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
+fi
+
+
 # Rosetta 2 is Apple’s software solution for aiding in the transition from Macs running on Intel processors
 #  to Macs running on Apple Silicon processors. 
 UNAME_MACHINE="$(/usr/bin/uname -m)"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+
+source $DOTFILES/dev/.java
+source $DOTFILES/dev/.nvm
+source $DOTFILES/dev/.python
