@@ -70,6 +70,8 @@ for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
 done;
 unset file;
 
+source $HOME/.dotfiles/install/.customize
+
 # Install krisp
 # sudo softwareupdate --install-rosetta
 # brew install --cask krisp

@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "onFocusChange",
+    "window.zoomLevel": 2,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "none",
+    "workbench.tree.renderIndentGuides": "none"
+}
