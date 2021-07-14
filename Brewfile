@@ -54,6 +54,7 @@ cask 'jetbrains-toolbox'
 cask 'gifox'
 # cask 'krisp'
 cask 'rectangle'
+cask 'gitkraken'
 
 
 # Quicklook
