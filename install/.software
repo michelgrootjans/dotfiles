@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 # Install all our dependencies with bundle (See Brewfile)
 brew update

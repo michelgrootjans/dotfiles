@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 # VS Code
 file=Library/Application\ Support/Code/User/settings.json

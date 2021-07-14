@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
   # if file is normal file rename it to *.bak

@@ -26,8 +26,7 @@ if ! command -v git &> /dev/null; then
 fi
 
 # Clone to ~/.dotfiles
-DOTFILES=$HOME/.dotfiles
-# DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 if [ ! -d $DOTFILES ]; then
   git clone https://github.com/michelgrootjans/dotfiles.git $DOTFILES
