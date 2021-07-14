@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-ls -hal ~/Library/Application\ Support/Code/User
-
 # VS Code
 file=Library/Application\ Support/Code/User/settings.json
-
-echo "$DOTFILES/$file" && [ -f "$DOTFILES/$file" ] && echo ' exists' || echo ' doesnt'
-echo "$HOME/$file" && [ -f "$HOME/$file" ] && echo ' exists' || echo ' doesnt'
 [ -f "$HOME/$file" ] && mv "$HOME/$file" "$HOME/$file.bak"
 ln -sf "$DOTFILES/$file" "$HOME/$file"
 
-ls -hal ~/Library/Application\ Support/Code/User

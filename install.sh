@@ -76,4 +76,4 @@ source $DOTFILES/install/.customize
 # brew install --cask krisp
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source .macos
+source $DOTFILES/install/.macos
