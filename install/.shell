@@ -10,6 +10,7 @@ fi
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 else
+  echo "Updating zsh-autosuggestions"
   git -C $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions pull
 fi
 
@@ -17,5 +18,6 @@ fi
 if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 else
+  echo "Updating powerlevel10k"
   git -C $HOME/.oh-my-zsh/custom/themes/powerlevel10k pull
 fi
