@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -e
+
+# Install all our dependencies with bundle (See Brewfile)
+brew update
+brew tap homebrew/bundle
+brew bundle --file $DOTFILES/Brewfile
+brew cleanup
+
+# Install sdkman
+if ! command -v sdk &> /dev/null; then
+  curl -s "https://get.sdkman.io" | bash
+fi
+
+# Install krisp
+# sudo softwareupdate --install-rosetta
+# brew install --cask krisp
+

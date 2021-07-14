@@ -5,4 +5,4 @@ set -e
 file=Library/Application\ Support/Code/User/settings.json
 [ -f "$HOME/$file" ] && mv "$HOME/$file" "$HOME/$file.bak"
 ln -sf "$DOTFILES/$file" "$HOME/$file"
-
+unset file;

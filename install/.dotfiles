@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+for file in .{zshrc,zprofile,gitconfig,gitignore,nvm-init,p10k.zsh}; do
+  # if file is normal file rename it to *.bak
+  [ -f $HOME/$file ] && mv $HOME/$file "$HOME/$file.bak"
+  ln -sf $DOTFILES/$file $HOME/$file
+done;
+unset file;
+
