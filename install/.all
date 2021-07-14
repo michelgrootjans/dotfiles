@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+
+source $DOTFILES/install/.software
+source $DOTFILES/install/.shell
+source $DOTFILES/install/.dotfiles
+source $DOTFILES/install/.customize
+
+# Set macOS preferences - we will run this last because this will reload the shell
+source $DOTFILES/install/.macos
