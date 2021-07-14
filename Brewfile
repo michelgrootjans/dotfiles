@@ -54,6 +54,7 @@ cask 'gifox'
 # cask 'krisp'
 cask 'rectangle'
 cask 'gitkraken'
+cask 'miro'
 
 
 # Quicklook
