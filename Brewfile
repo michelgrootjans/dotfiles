@@ -26,6 +26,7 @@ brew 'lazygit'
 brew 'thefuck'
 brew 'watch'
 brew 'wget'
+brew 'graphviz'
 brew 'remotemobprogramming/brew/mob'
 
 
