@@ -16,6 +16,8 @@ fi
 # setup nvm
 if [[ ! -d $HOME/.nvm ]]; then
   git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
+  \. "$HOME/.nvm/nvm.sh"  # This loads nvm
+  nvm install node
 fi
 
 
