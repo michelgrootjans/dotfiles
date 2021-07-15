@@ -108,4 +108,4 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.zprofile
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/bin:$PATH"
