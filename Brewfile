@@ -55,6 +55,7 @@ cask 'rectangle'
 cask 'gitkraken'
 cask 'miro'
 cask 'notion'
+cask 'raindropio'
 
 
 # Quicklook
