@@ -56,6 +56,8 @@ cask 'gitkraken'
 cask 'miro'
 cask 'notion'
 cask 'raindropio'
+cask 'mmhmm'
+cask 'whatsapp'
 
 
 # Quicklook
