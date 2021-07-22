@@ -58,6 +58,7 @@ cask 'notion'
 cask 'raindropio'
 cask 'mmhmm'
 cask 'whatsapp'
+cask 'steam'
 
 
 # Quicklook
