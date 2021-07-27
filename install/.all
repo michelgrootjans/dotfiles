@@ -6,6 +6,7 @@ source $DOTFILES/install/.software
 source $DOTFILES/install/.shell
 source $DOTFILES/install/.dotfiles
 source $DOTFILES/install/.customize
+#source $DOTFILES/install/dotnet
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/install/.macos
