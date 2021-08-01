@@ -28,6 +28,7 @@ brew 'watch'
 brew 'wget'
 brew 'graphviz'
 brew 'remotemobprogramming/brew/mob'
+brew 'icdiff'
 
 
 # Development
