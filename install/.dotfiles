@@ -2,7 +2,7 @@
 set -e
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
-for file in .{zshrc,zprofile,gitconfig,gitignore,p10k.zsh}; do
+for file in .{zshrc,zprofile,gitconfig,gitignore,git_template,p10k.zsh}; do
   # if file is normal file (not symlink) rename it to *.bak
   [ -f $HOME/$file ] && [ ! -L $HOME/$file ] && mv $HOME/$file "$HOME/$file.bak"
   ln -sf $DOTFILES/$file $HOME/$file
