@@ -8,3 +8,5 @@
 [alias]
 	next = "!f() { git checkout `git rev-list HEAD..${1} | tail -1`; }; f"
 	previous = "!f() { git checkout `git rev-list ${1}..HEAD | head -2 | tail -1`; }; f"
+[core]
+	excludesFile = ~/.gitignore
