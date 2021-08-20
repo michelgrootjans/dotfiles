@@ -64,6 +64,7 @@ cask 'raindropio'
 cask 'mmhmm'
 cask 'whatsapp'
 cask 'steam'
+cask 'postman'
 
 
 # Quicklook
