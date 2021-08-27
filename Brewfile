@@ -29,6 +29,7 @@ brew 'wget'
 brew 'graphviz'
 brew 'remotemobprogramming/brew/mob'
 brew 'icdiff'
+brew 'jq'
 
 
 # Development
