@@ -3,6 +3,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/bundle'
 tap 'remotemobprogramming/brew'
+tap 'heroku/brew'
 
 #Binaries
 # brew 'zsh'
@@ -30,6 +31,7 @@ brew 'graphviz'
 brew 'remotemobprogramming/brew/mob'
 brew 'icdiff'
 brew 'jq'
+brew 'heroku'
 
 
 # Development
