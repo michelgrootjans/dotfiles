@@ -68,6 +68,7 @@ cask 'mmhmm'
 cask 'whatsapp'
 cask 'steam'
 cask 'postman'
+cask 'dotnet-sdk'
 
 
 # Quicklook
