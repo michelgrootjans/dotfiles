@@ -10,3 +10,6 @@
 	previous = "!f() { git checkout `git rev-list ${1}..HEAD | head -2 | tail -1`; }; f"
 [core]
 	excludesFile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+	diffFilter = diff-so-fancy --patch

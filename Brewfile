@@ -31,6 +31,7 @@ brew 'remotemobprogramming/brew/mob'
 brew 'icdiff'
 brew 'jq'
 brew 'heroku'
+brew 'diff-so-fancy'
 
 
 # Development
