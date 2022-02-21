@@ -39,6 +39,8 @@ brew 'sqlite'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 
+# Kubernetes
+brew 'kubectl'
 
 # Apps
 cask 'iterm2'
