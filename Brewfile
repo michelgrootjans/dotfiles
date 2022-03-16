@@ -32,6 +32,8 @@ brew 'icdiff'
 brew 'jq'
 brew 'heroku'
 brew 'diff-so-fancy'
+brew 'tldr'
+brew 'gping'
 
 
 # Development
