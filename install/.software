@@ -11,6 +11,8 @@ brew cleanup
 # Install sdkman
 if ! command -v sdk &> /dev/null; then
   curl -s "https://get.sdkman.io" | bash
+else
+  echo "sdkman already installed"
 fi
 
 # setup nvm
@@ -18,6 +20,8 @@ if [[ ! -d $HOME/.nvm ]]; then
   git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
   \. "$HOME/.nvm/nvm.sh"  # This loads nvm
   nvm install node
+else
+  echo "nvm already installed"
 fi
 
 
