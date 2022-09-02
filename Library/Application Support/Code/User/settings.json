@@ -4,5 +4,7 @@
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "none",
     "workbench.tree.renderIndentGuides": "none",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Default Light+",
+    "window.zoomLevel": 3
 }
