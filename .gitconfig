@@ -4,15 +4,17 @@
 [fetch]
   prune = true
 [alias]
-	next = "!f() { git checkout `git rev-list HEAD..${1} | tail -1`; }; f"
-	previous = "!f() { git checkout `git rev-list ${1}..HEAD | head -2 | tail -1`; }; f"
+  next = "!f() { git checkout `git rev-list HEAD..${1} | tail -1`; }; f"
+  previous = "!f() { git checkout `git rev-list ${1}..HEAD | head -2 | tail -1`; }; f"
 [core]
-	excludesFile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesFile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [interactive]
-	diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
 [user]
-	email = michel.grootjans@gmail.com
-	name = Michel Grootjans
+  email = michel.grootjans@gmail.com
+  name = Michel Grootjans
+
+# local settings for this machine
 [include]
-    path = ~/.gitconfig_local
+  path = ~/.gitconfig_local
