@@ -8,11 +8,11 @@ alias ls='exa' # see https://github.com/ogham/exa
 alias cat='bat'
 alias top=bpytop
 alias diff=icdiff
+alias kraken='open -na "GitKraken" --args -p $(pwd)'
 
 mkcd() { mkdir -p "$@" && cd "$@"; }
 gitall() { find . -type d -depth 1 -print -exec git -C {} "$@"  \; }
 mob-start() { git checkout -b "$@" && git push origin "$@" -u && mob start -i; }
-kraken() { /Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd) }
 
 autoload -U compinit
 compinit
