@@ -1,0 +1,9 @@
+# copy this file to your home dir for it to take effect
+[user]
+  email = michel.grootjans@work.com
+
+# for multiple gitlab accounts
+# combine this with a named configuration in $HOME/.ssh/config
+# see example
+[url "git@gitlab-work.com"]
+  insteadOf = git@gitlab.com

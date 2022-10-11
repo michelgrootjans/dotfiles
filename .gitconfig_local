@@ -1,0 +1,5 @@
+# copy this file to your home dir for it to take effect
+[includeIf "gitdir:**/work/"]
+  path = ~/.gitconfig_work
+#[includeIf "hasconfig:remote.*.url:**work/**"]
+#  path = ~/.gitconfig_work
