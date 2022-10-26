@@ -5,6 +5,5 @@
     "editor.renderWhitespace": "none",
     "workbench.tree.renderIndentGuides": "none",
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Default Light+",
-    "window.zoomLevel": 3
+    "workbench.colorTheme": "Default Light+"
 }
