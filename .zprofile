@@ -6,7 +6,7 @@ export TZ=CET
 # CLI customisation
 alias ls='exa' # see https://github.com/ogham/exa
 alias cat='bat'
-alias top=bpytop
+alias top=btop
 alias diff=icdiff
 alias kraken='open -na "GitKraken" --args -p $(pwd)'
 
