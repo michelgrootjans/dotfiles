@@ -76,7 +76,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump aws brew zsh-autosuggestions sdk nvm thefuck)
+plugins=(git autojump aws brew zsh-autosuggestions sdk nvm thefuck terraform)
 
 source $ZSH/oh-my-zsh.sh
 
