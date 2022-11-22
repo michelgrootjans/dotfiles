@@ -8,7 +8,7 @@
   next = "!f() { git checkout `git rev-list HEAD..${1} | tail -1`; }; f"
   previous = "!f() { git checkout `git rev-list ${1}..HEAD | head -2 | tail -1`; }; f"
   # all = "!f() { find .  \( -exec test -d '{}/.git' \; \) -print -prune }; f"
-  all = "!f() { find . -type d -depth 1 -print -prune ; }; f"
+  all = "!f() { find . -type d -depth 1 -print -prune | xargs ls ; }; f"
 [core]
   excludesFile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
