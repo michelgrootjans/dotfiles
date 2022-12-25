@@ -109,3 +109,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zprofile
 
 export PATH="/usr/local/sbin:$HOME/bin:$PATH"
+
+source /Users/mgrootjans/.docker/init-zsh.sh || true # Added by Docker Desktop

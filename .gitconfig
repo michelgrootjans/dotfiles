@@ -11,6 +11,7 @@
   all = "!f() { find . -type d -depth 1 -print -prune | xargs ls ; }; f"
   example1 = "!f() { echo "Listing branches"; git branch -vva; }; f"
   example2 = "!f() { echo "value passed as parameter is ${@}"; }; f"
+[core]
   excludesFile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
 [interactive]

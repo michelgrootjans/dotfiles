@@ -22,3 +22,5 @@ compinit
 [[ ! -f ~/.zprofile_local ]] || source ~/.zprofile_local
 
 source $HOME/.dotfiles/dev/.all
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
