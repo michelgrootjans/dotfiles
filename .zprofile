@@ -9,6 +9,7 @@ alias cat='bat'
 alias top=btop
 alias diff=icdiff
 alias kraken='open -na "GitKraken" --args -p $(pwd)'
+alias http='noglob http'
 
 mkcd() { mkdir -p "$@" && cd "$@"; }
 gitall() { find . -type d -depth 1 -print -exec git -C {} "$@"  \; }
@@ -22,5 +23,10 @@ compinit
 [[ ! -f ~/.zprofile_local ]] || source ~/.zprofile_local
 
 source $HOME/.dotfiles/dev/.all
+
+if command -v direnv &> /dev/null; then
+  export DIRENV_LOG_FORMAT=""
+  eval "$(direnv hook zsh)"
+fi
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh

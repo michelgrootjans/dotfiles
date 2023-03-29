@@ -5,3 +5,8 @@ node_modules
 .DS_Store
 Brewfile.lock.json
 build
+
+# see https://github.com/direnv/direnv/wiki/Git
+.direnv
+.envrc
+.env
