@@ -10,3 +10,4 @@ build
 .direnv
 .envrc
 .env
+*.received.txt
