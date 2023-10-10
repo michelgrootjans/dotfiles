@@ -36,6 +36,7 @@ init-ts() {
 
   npm install -D jest @types/jest ts-jest
   ./node_modules/.bin/ts-jest config:init
+  npx tsc --init
   sed -i '' 's/"echo \\\"Error\: no test specified\\\" .*/"jest",/' package.json
   sed -i '' -e '/"test".*/a\'$'\n\    ''"test:watch": "jest --watchAll"' package.json
 
