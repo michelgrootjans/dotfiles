@@ -28,5 +28,3 @@ if command -v direnv &> /dev/null; then
   export DIRENV_LOG_FORMAT=""
   eval "$(direnv hook zsh)"
 fi
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
