@@ -4,8 +4,9 @@ export LANG="en_US"
 export TZ=CET
 
 # CLI customisation
-alias ls='exa' # see https://github.com/ogham/exa
-alias cat='bat'
+alias ls=eza # see https://github.com/eza-community/eza
+alias l='eza -lah'
+alias cat=bat
 alias top=btop
 alias diff=icdiff
 alias kraken='open -na "GitKraken" --args -p $(pwd)'
