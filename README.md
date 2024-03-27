@@ -9,3 +9,12 @@ This will run the installation on a brand new machine
 
 
 Heavily inspired by https://dotfiles.github.io/ and https://github.com/driesvints/dotfiles
+
+# Homebrew
+
+## Apply existing Brewfile
+`brew bundle`
+
+## Update Brewfile based on current system
+
+`brew bundle dump --force`
