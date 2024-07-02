@@ -26,3 +26,5 @@
   path = ~/.gitconfig_local
 [branch]
   sort=-committerdate
+[push]
+	autoSetupRemote = true
