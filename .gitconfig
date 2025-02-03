@@ -28,3 +28,5 @@
   sort=-committerdate
 [push]
 	autoSetupRemote = true
+[pull]
+	rebase = true
