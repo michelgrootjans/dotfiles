@@ -1,0 +1,27 @@
+remote-conundra() {
+  # Ensure we're inside a git repo
+  if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    echo "❌ Not inside a git repository."
+    return 1
+  fi
+
+  # Get the current origin URL
+  current_url=$(git remote get-url origin 2>/dev/null)
+
+  if [[ -z "$current_url" ]]; then
+    echo "❌ No 'origin' remote found."
+    return 1
+  fi
+
+  # Only act if it's a gitlab.com URL
+  if [[ "$current_url" == git@gitlab.com:* ]]; then
+    new_url="${current_url/git@gitlab.com:/git@gitlab-conundra.com:}"
+    echo "🔄 Updating origin:"
+    echo "   Old: $current_url"
+    echo "   New: $new_url"
+    git remote set-url origin "$new_url"
+    echo "✅ Remote updated."
+  else
+    echo "ℹ️ Remote is not git@gitlab.com — no changes made."
+  fi
+}

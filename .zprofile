@@ -20,7 +20,12 @@ autoload -U compinit
 compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  PROMPT='%n@%m:%~%# '
+  RPROMPT=''
+else
+  [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+fi
 [[ ! -f ~/.zprofile_local ]] || source ~/.zprofile_local
 
 source $HOME/.dotfiles/dev/.all

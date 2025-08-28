@@ -3,5 +3,5 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 source $DOTFILES/dev/.java
 source $DOTFILES/dev/.nvm
-source $DOTFILES/dev/.python
-source $DOTFILES/def/.direnv
+source $DOTFILES/dev/.utils
+# source $DOTFILES/dev/.python
