@@ -30,20 +30,44 @@ sound() {
   # Function to switch audio input and output sources
   local mode=$1
 
+  # Auto-detect mode if no parameter is provided
+  if [[ -z "$mode" ]]; then
+    echo "🔍 No mode specified, auto-detecting..."
+
+    # Get list of available output devices
+    local devices=$(SwitchAudioSource -a -t input)
+
+    if echo "$devices" | grep -q "Shure"; then
+      echo "🎤 Detected 'Shure', using mike mode"
+      mode="mike"
+    elif echo "$devices" | grep -q "Michels Shokz"; then
+      echo "🎧 Detected 'Michels Shokz', using shokz mode"
+      mode="shokz"
+    else
+      echo "🔈 No specific devices detected, using default mode"
+      mode="default"
+    fi
+  fi
+
   case "$mode" in
     "default")
       echo "🔊 Switching to default audio settings..."
+      SwitchAudioSource -t output -s 'MacBook Pro Speakers'
+      SwitchAudioSource -t input -s 'MacBook Pro Microphone'
+      ;;
+    "shokz")
+      echo "🔊 Switching to Shokz audio settings..."
       SwitchAudioSource -t output -s 'Michels Shokz'
       SwitchAudioSource -t input -s 'MacBook Pro Microphone'
       ;;
     "mike")
       echo "🔊 Switching to Mike audio settings..."
       SwitchAudioSource -t output -s 'Michels Shokz'
-      SwitchAudioSource -t input -s 'MacBook Pro Microphone'
+      SwitchAudioSource -t input -s 'Michels Shokz'
       ;;
     *)
       echo "❌ Unknown audio mode: $mode"
-      echo "Available modes: default, mike"
+      echo "Available modes: default, shokz, mike"
       return 1
       ;;
   esac
