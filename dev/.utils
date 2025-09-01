@@ -71,4 +71,8 @@ sound() {
       return 1
       ;;
   esac
+
+  # Set microphone input volume to 100%
+  echo "🎤 Setting microphone level to 100%..."
+  osascript -e 'set volume input volume 100'
 }
