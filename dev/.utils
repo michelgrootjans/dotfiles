@@ -28,49 +28,30 @@ remote-conundra() {
 
 sound() {
   # Function to switch audio input and output sources
-  local mode=$1
+  echo "🔊 Configuring audio devices..."
 
-  # Auto-detect mode if no parameter is provided
-  if [[ -z "$mode" ]]; then
-    echo "🔍 No mode specified, auto-detecting..."
-
-    # Get list of available output devices
-    local devices=$(SwitchAudioSource -a -t input)
-
-    if echo "$devices" | grep -q "Shure"; then
-      echo "🎤 Detected 'Shure', using mike mode"
-      mode="mike"
-    elif echo "$devices" | grep -q "Michels Shokz"; then
-      echo "🎧 Detected 'Michels Shokz', using shokz mode"
-      mode="shokz"
-    else
-      echo "🔈 No specific devices detected, using default mode"
-      mode="default"
-    fi
+  # Set input device based on priority
+  local input_devices=$(SwitchAudioSource -a -t input)
+  if echo "$input_devices" | grep -q "Shure"; then
+    echo "🎤 Setting input device to 'Shure'..."
+    SwitchAudioSource -t input -s 'Shure'
+  else
+    echo "🎤 Setting input device to 'MacBook Pro Microphone'..."
+    SwitchAudioSource -t input -s 'MacBook Pro Microphone'
   fi
 
-  case "$mode" in
-    "default")
-      echo "🔊 Switching to default audio settings..."
-      SwitchAudioSource -t output -s 'MacBook Pro Speakers'
-      SwitchAudioSource -t input -s 'MacBook Pro Microphone'
-      ;;
-    "shokz")
-      echo "🔊 Switching to Shokz audio settings..."
-      SwitchAudioSource -t output -s 'Michels Shokz'
-      SwitchAudioSource -t input -s 'MacBook Pro Microphone'
-      ;;
-    "mike")
-      echo "🔊 Switching to Mike audio settings..."
-      SwitchAudioSource -t output -s 'Michels Shokz'
-      SwitchAudioSource -t input -s 'Michels Shokz'
-      ;;
-    *)
-      echo "❌ Unknown audio mode: $mode"
-      echo "Available modes: default, shokz, mike"
-      return 1
-      ;;
-  esac
+  # Set output device based on priority
+  local output_devices=$(SwitchAudioSource -a -t output)
+  if echo "$output_devices" | grep -q "Michels Shokz"; then
+    echo "🔈 Setting output device to 'Michels Shokz'..."
+    SwitchAudioSource -t output -s 'Michels Shokz'
+  elif echo "$output_devices" | grep -q "WH-1000XM4"; then
+    echo "🔈 Setting output device to 'WH-1000XM4'..."
+    SwitchAudioSource -t output -s 'WH-1000XM4'
+  else
+    echo "🔈 Setting output device to 'MacBook Pro Speakers'..."
+    SwitchAudioSource -t output -s 'MacBook Pro Speakers'
+  fi
 
   # Set microphone input volume to 100%
   echo "🎤 Setting microphone level to 100%..."
