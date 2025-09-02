@@ -28,32 +28,26 @@ remote-conundra() {
 
 sound() {
   # Function to switch audio input and output sources
-  echo "🔊 Configuring audio devices..."
 
   # Set input device based on priority
   local input_devices=$(SwitchAudioSource -a -t input)
   if echo "$input_devices" | grep -q "Shure"; then
-    echo "🎤 Setting input device to 'Shure'..."
     SwitchAudioSource -t input -s 'Shure'
   else
-    echo "🎤 Setting input device to 'MacBook Pro Microphone'..."
     SwitchAudioSource -t input -s 'MacBook Pro Microphone'
   fi
 
   # Set output device based on priority
   local output_devices=$(SwitchAudioSource -a -t output)
   if echo "$output_devices" | grep -q "Michels Shokz"; then
-    echo "🔈 Setting output device to 'Michels Shokz'..."
     SwitchAudioSource -t output -s 'Michels Shokz'
   elif echo "$output_devices" | grep -q "WH-1000XM4"; then
-    echo "🔈 Setting output device to 'WH-1000XM4'..."
     SwitchAudioSource -t output -s 'WH-1000XM4'
   else
-    echo "🔈 Setting output device to 'MacBook Pro Speakers'..."
     SwitchAudioSource -t output -s 'MacBook Pro Speakers'
   fi
 
   # Set microphone input volume to 100%
-  echo "🎤 Setting microphone level to 100%..."
   osascript -e 'set volume input volume 100'
+  echo "🎤 100%"
 }
