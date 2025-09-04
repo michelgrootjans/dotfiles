@@ -31,8 +31,8 @@ sound() {
 
   # Set input device based on priority
   local input_devices=$(SwitchAudioSource -a -t input)
-  if echo "$input_devices" | grep -q "Shure"; then
-    SwitchAudioSource -t input -s 'Shure'
+  if echo "$input_devices" | grep -q "Shure MV7"; then
+    SwitchAudioSource -t input -s 'Shure MV7'
   else
     SwitchAudioSource -t input -s 'MacBook Pro Microphone'
   fi
