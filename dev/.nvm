@@ -28,7 +28,7 @@ load-nvmrc
 
 # init typescript project
 init-ts() {
-  echo v18.12.1 > .nvmrc
+  echo v24.7.0 > .nvmrc
   nvm use
   npm init -y
 
@@ -39,6 +39,8 @@ init-ts() {
   npx tsc --init
   sed -i '' 's/"echo \\\"Error\: no test specified\\\" .*/"jest",/' package.json
   sed -i '' -e '/"test".*/a\'$'\n\    ''"test:watch": "jest --watchAll"' package.json
+
+  sed -i '' 's/"types": \[\]/"types": ["jest"]/' tsconfig.json
 
   echo 'it("should work", () => {expect(true).toBe(true);})' > it-works.spec.ts
   npm test
