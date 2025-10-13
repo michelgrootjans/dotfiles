@@ -71,4 +71,6 @@ sound() {
     osascript -e 'set volume input volume 100'
     echo "🎛 Volume: $current_volume% => 100%"
   fi
+
+  SwitchAudioSource -m unmute
 }
