@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
+
 # Compatible with server configs
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
@@ -34,3 +38,7 @@ if command -v direnv &> /dev/null; then
   export DIRENV_LOG_FORMAT=""
   eval "$(direnv hook zsh)"
 fi
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"

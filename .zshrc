@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -17,9 +21,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-  ZSH_THEME=""  # Disable Powerlevel10k for Cursor
+  # ZSH_THEME=""  # Disable Powerlevel10k for Cursor
+elif [[ "$TERM_PROGRAM" == "kiro" ]]; then
+  # Leave empty
 else
   ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
+
+# Report cwd to terminal after each command (fixes iTerm2 split pane directory)
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+  _report_cwd() {
+    printf '\e]7;file://%s%s\a' "$HOST" "${PWD// /%20}"
+  }
+  add-zsh-hook chpwd _report_cwd
+  _report_cwd  # report on shell startup too
 fi
 
 # Set list of themes to pick from when loading at random
@@ -80,7 +95,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump aws brew zsh-autosuggestions sdk nvm thefuck terraform)
+plugins=(git svn autojump aws brew zsh-autosuggestions sdk nvm thefuck terraform)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,3 +132,7 @@ source ~/.zprofile
 export PATH="/usr/local/sbin:$HOME/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
