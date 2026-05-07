@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-export DOTNET_ROOT="$HOME/.dotnet"
-export PATH="$DOTNET_ROOT:$PATH"
-export PATH="$DOTNET_ROOT/tools:$PATH"
+# use the native microsoft installation of dotnet
+# export DOTNET_ROOT="$HOME/.dotnet"
+# export PATH="$DOTNET_ROOT:$PATH"
+# export PATH="$DOTNET_ROOT/tools:$PATH"
+
+# use the homebrew installation of dotnet
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
